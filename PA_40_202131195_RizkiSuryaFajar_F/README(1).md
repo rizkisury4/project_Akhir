@@ -1,6 +1,32 @@
 
 # Contour
 
+Contur (atau disebut juga "contour" dalam bahasa Inggris) mengacu pada garis yang mengelilingi area yang memiliki intensitas piksel yang serupa atau pola yang seragam. Kontur adalah representasi visual dari bentuk atau objek yang ada dalam gambar.
+
+Ketika kita melakukan operasi segmentasi pada gambar, kontur sering digunakan untuk mengidentifikasi dan memisahkan objek dari latar belakang atau objek lain dalam gambar. Setiap kontur diidentifikasi sebagai urutan titik-titik piksel yang membentuk garis tertutup. Garis kontur ini mengikuti batas atau tepi dari objek dalam gambar.
+
+Beberapa fungsi atau algoritma dalam pustaka pengolahan gambar, seperti OpenCV, dapat digunakan untuk menemukan kontur dalam gambar. Fungsi cv2.findContours() adalah salah satu contohnya. Fungsi ini mengidentifikasi kontur-kontur yang ada dalam gambar dengan menghitung batas-batas yang memisahkan area dengan intensitas piksel yang berbeda.
+
+Setelah mengidentifikasi kontur, kita dapat menggunakannya untuk berbagai tujuan, seperti pengenalan objek, pengukuran ukuran atau bentuk objek, deteksi perubahan atau gerakan, dan banyak lagi. Kontur juga sering digunakan sebagai input untuk operasi lanjutan, seperti pengenalan wajah, pelacakan objek, atau segmentasi lebih lanjut.
+
+Dalam implementasi kode Anda, Anda menggunakan fungsi cv2.findContours() untuk menemukan kontur dalam gambar setelah menerapkan operasi Canny Edge Detection. Kontur yang ditemukan kemudian digambar pada gambar salinan menggunakan fungsi cv2.drawContours().
+
+
+#Tahapan
+
+  1.  Mempersiapkan gambar: Mulailah dengan memuat gambar yang akan digunakan untuk membuat gambar kontur. Anda dapat menggunakan pustaka seperti OpenCV untuk membaca dan memuat gambar ke dalam struktur data yang sesuai.
+
+  2.  Pra-pemrosesan (Opsional): Beberapa gambar mungkin memerlukan pra-pemrosesan sebelum dapat menemukan kontur dengan baik. Tahap pra-pemrosesan dapat mencakup penyesuaian kontras, pencahayaan, penghalusan gambar, atau operasi morfologi seperti erosi dan dilasi. Pra-pemrosesan dapat membantu meningkatkan kualitas kontur yang akan ditemukan.
+
+  3.  Mengubah gambar menjadi citra biner: Untuk menemukan kontur, gambar perlu diubah menjadi citra biner. Ini bisa dilakukan dengan menggunakan teknik segmentasi, seperti thresholding, yang mengubah piksel gambar menjadi hitam atau putih berdasarkan ambang batas tertentu. Teknik lain seperti Canny Edge Detection juga dapat digunakan untuk menghasilkan tepi yang akurat sebagai dasar kontur.
+
+ 4.   Mencari kontur: Setelah gambar diubah menjadi citra biner, langkah berikutnya adalah menemukan kontur dalam citra tersebut. Dalam OpenCV, Anda dapat menggunakan fungsi cv2.findContours() untuk menemukan kontur dalam citra biner. Fungsi ini mengembalikan daftar kontur yang ditemukan.
+
+5.  Menampilkan atau menggambar kontur: Setelah kontur ditemukan, Anda dapat memilih untuk menampilkan atau menggambar kontur pada gambar asli atau gambar lainnya. Dalam OpenCV, Anda dapat menggunakan fungsi cv2.drawContours() untuk menggambar kontur pada gambar dengan memberikan parameter gambar sasaran, daftar kontur, indeks kontur yang ingin digambar, warna, dan ketebalan garis.
+
+
+#source code
+
     import cv2: Baris ini mengimpor pustaka OpenCV, yang merupakan pustaka populer untuk tugas pengolahan citra dan video. Pustaka ini menyediakan fungsi dan alat untuk pengolahan gambar dan video, deteksi dan pelacakan objek, dan lain-lain.
 
     import numpy as np: Baris ini mengimpor pustaka NumPy dan memberikan alias "np". NumPy adalah pustaka yang kuat untuk komputasi numerik di Python. Pustaka ini mendukung array multidimensi besar dan koleksi fungsi matematika untuk melakukan operasi pada array tersebut.
